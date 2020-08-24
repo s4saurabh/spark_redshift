@@ -4,7 +4,8 @@ To run spark redshift example code you will need the Spark-RedShift JDBC driver.
 
 The jdbc driver is available on EMR master node at /usr/share/aws/redshift/jdbc/ .
 
-Authenticating to S3 and Redshift
+**Authenticating to S3 and Redshift**
+
 The use of the jdbc library involves several connections which must be authenticated / secured, all of which are illustrated in the following diagram:
 ```
                             ┌───────┐
