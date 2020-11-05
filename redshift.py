@@ -12,9 +12,7 @@ df = sql_context.read \
     .format("jdbc") \
     .option("jdbcdriver", "com.amazon.redshift.jdbc42.Driver") \
     .option("url", "jdbc:redshift://redshifthost:5439/database?user=username&password=pass")
-    .option("query", "select * from orders") \
-    .option("aws_iam_role", "arn:aws:iam::123456789000:role/redshift_iam_role") \
-    .option("tempdir", "s3://path_to_temp_dir") \
+    .option("query", "select * from orders") \    
     .load()
 
 df.show()
