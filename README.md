@@ -54,4 +54,4 @@ The following describes how each connection can be authenticated:
 
 To run redshift_spark.py with Spark on EMR you need to provide the necessary jars and packages. 
 
-```spark-submit --jars spark-redshift_2.11-3.0.0-SNAPSHOT.jar,/usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar,spark-measure_2.11-0.17-SNAPSHOT.jar --packages org.apache.spark:spark-avro_2.11:2.4.2,io.github.spark-redshift-community:spark-redshift_2.11:4.0.1 redshift_spark.py```
+```spark-submit --jars spark-redshift_2.11-3.0.0-SNAPSHOT.jar,/usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar --packages org.apache.spark:spark-avro_2.11:2.4.2,io.github.spark-redshift-community:spark-redshift_2.11:4.0.1 redshift_spark.py```
