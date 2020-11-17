@@ -11,6 +11,8 @@ To run redshift.py with Spark on EMR you need to provide the necessary jar and d
 ```spark-submit --driver-class-path /usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar --jars /usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar redshift.py```
 
 **Spark RedShift Connector Community Edition**
+
+
 Use the spark-redshift community edition https://github.com/spark-redshift-community/spark-redshift as DataBricks is no longer adding improvements to spark-redshift connector and is only available to DataBricks customers.
 
 This has been tested on EMR 6.1.0 with Spark 3.0.1 and Scala 2.12.
