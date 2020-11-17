@@ -10,9 +10,23 @@ To run redshift.py with Spark on EMR you need to provide the necessary jar and d
 
 ```spark-submit --driver-class-path /usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar --jars /usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar redshift.py```
 
-**Spark RedShift Connector**
+**Spark RedShift Connector Community Edition**
+Use the spark-redshift community edition https://github.com/spark-redshift-community/spark-redshift as DataBricks is no longer adding improvements to spark-redshift connector and is only available to DataBricks customers.
 
-The Spark RedShift connector is based on DataBricks spark-redshift connector. Use the spark-redshift community edition https://github.com/spark-redshift-community/spark-redshift as DataBricks is no longer adding improvements to spark-redshift connector and is only available to DataBricks customers.
+This has been tested on EMR 6.1.0 with Spark 3.0.1 and Scala 2.12.
+Download the necessary jars or compile from source.
+
+https://search.maven.org/remotecontent?filepath=io/github/spark-redshift-community/spark-redshift_2.12/4.2.0/spark-redshift_2.12-4.2.0.jar
+
+https://search.maven.org/remotecontent?filepath=com/eclipsesource/minimal-json/minimal-json/0.9.5/minimal-json-0.9.5.jar
+
+https://search.maven.org/remotecontent?filepath=org/apache/spark/spark-avro_2.12/3.0.1/spark-avro_2.12-3.0.1.jar
+
+```spark-submit --jars spark-redshift_2.12-4.2.0.jar,minimal-json-0.9.5.jar,spark-avro_2.12-3.0.1.jar,/usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar redshift_spark_community.py```
+
+**Spark RedShift Connector DataBricks**
+
+The Spark RedShift connector is based on DataBricks spark-redshift connector. 
 
 Build the project to create the necessary jars or use the spark-redshift_2.11-3.0.0-SNAPSHOT.jar from this repo directly. This has been tested on EMR 5.30.1 with Spark 2.4.5 and Scala 2.11.12.
 
@@ -55,3 +69,6 @@ The following describes how each connection can be authenticated:
 To run redshift_spark.py with Spark on EMR you need to provide the necessary jars and packages. 
 
 ```spark-submit --jars spark-redshift_2.11-3.0.0-SNAPSHOT.jar,/usr/share/aws/redshift/jdbc/RedshiftJDBC42.jar --packages org.apache.spark:spark-avro_2.11:2.4.2,io.github.spark-redshift-community:spark-redshift_2.11:4.0.1 redshift_spark.py```
+
+
+
